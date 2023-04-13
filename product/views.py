@@ -55,3 +55,8 @@ def review_detail_api_view(request, id):
                         data={'error': 'Object not found!'})
     serializer = ReviewSerializers(movie)
     return Response(data=serializer.data)
+
+def products_reviews(request):
+    product = Product.objects.all()
+    serializer = RatingSerializers(product, many=True)
+    return Response(data=serializer.data)
