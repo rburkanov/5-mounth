@@ -10,7 +10,7 @@ class Category(models.Model):
 
 class Product(models.Model):
     title = models.CharField(max_length=200)
-    descriptions = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
     price = models.IntegerField()
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
 
